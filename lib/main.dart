@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 RaisedButton(
-                  child: Text(""),
+                  child: Text(_authData == AuthMode.Login ?"LOGIN":"SIGN UP"),
                     onPressed: (){}
                     ),
               ],
