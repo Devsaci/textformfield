@@ -20,18 +20,21 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
   MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-enum AuthMode { SingUp, Login }
 
+enum AuthMode { SingUp, Login }
 class _MyHomePageState extends State<MyHomePage> {
+
   final GlobalKey<FormState> _formKey = GlobalKey();
-  final AuthMode _authMode = AuthMode.Login;
-  final Map<String, String> _authData = {
+   AuthMode _authMode = AuthMode.Login;
+
+   Map<String?, String?> _authData = {
     'email': '',
     'password': '',
   };
@@ -39,11 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
   void _switchAuthMode() {
     if (_authMode == AuthMode.Login) {
       setState(() {
-        _authMode == AuthMode.SingUp;
+        _authMode = AuthMode.SingUp;
       });
     } else {
       setState(() {
-        _authMode == AuthMode.Login;
+        _authMode = AuthMode.Login;
       });
     }
   }
@@ -59,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
+              padding:   const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
             child: Column(
               children: [
                 TextFormField(
@@ -72,13 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     return null;
                   },
                   onSaved: (val) {
-                    _authData['email'] = val!;
+                    _authData['email'] = val;
                   },
                 ),
                 RaisedButton(
                   child:
-                      Text(_authData == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
-                  onPressed: () {},
+                      Text(_authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
+                  onPressed: _submit,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
                   padding:
@@ -87,9 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   textColor: Theme.of(context).primaryTextTheme.button!.color,
                 ),
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: _switchAuthMode,
                   child: Text(
-                      '${_authData == AuthMode.Login ? 'SIGN UP ' : 'LOGIN'}  INSTED'),
+                      "${_authMode == AuthMode.Login ? 'SIGN UP ' : 'LOGIN'}  INSTEAD"),
                 ),
               ],
             ),
@@ -97,5 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  void _submit() {
   }
 }
