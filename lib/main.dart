@@ -37,6 +37,10 @@ class _MyHomePageState extends State<MyHomePage> {
   };
 
   void _switchAuthMode(){
+if(_authMode == AuthMode.Login){
+
+}
+
 
   }
 
