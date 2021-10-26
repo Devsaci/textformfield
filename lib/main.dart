@@ -26,14 +26,14 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-enum AuthMode {SingUp,  Login}
+enum AuthMode { SingUp, Login }
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode = AuthMode.Login;
   Map<String, String> _authData = {
     'email': '',
-    'password' : '',
+    'password': '',
   };
 
   @override
@@ -45,28 +45,27 @@ class _MyHomePageState extends State<MyHomePage> {
       // ignore: prefer_const_constructors
       body: Center(
         child: Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  TextFormField(
-                    // ignore: prefer_const_constructors
-                    decoration: InputDecoration(labelText: "E-Mail"),
-                    keyboardType: TextInputType.emailAddress,
-                    validator: (val){
-                      if ( val!.isEmpty || !val!.contains("@")) {
-                        return 'Invalid Email';
-                      }
-                      return null;
-                    },
-                    onSaved: (val){
-                      _authData['email'] = val!;
-                    },
-
-                  ),
-                ],
-              ),
+          key: _formKey,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                TextFormField(
+                  // ignore: prefer_const_constructors
+                  decoration: InputDecoration(labelText: "E-Mail"),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (val) {
+                    if (val!.isEmpty || !val!.contains("@")) {
+                      return 'Invalid Email';
+                    }
+                    return null;
+                  },
+                  onSaved: (val) {
+                    _authData['email'] = val!;
+                  },
+                ),
+              ],
             ),
+          ),
         ),
       ),
     );
