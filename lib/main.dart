@@ -36,12 +36,12 @@ class _MyHomePageState extends State<MyHomePage> {
     'password': '',
   };
 
-  void _switchAuthMode(){
-if(_authMode == AuthMode.Login){
+  void _switchAuthMode() {
+    if (_authMode == AuthMode.Login) {
+      setState(() {
 
-}
-
-
+      });
+    }
   }
 
   @override
@@ -72,9 +72,9 @@ if(_authMode == AuthMode.Login){
                   },
                 ),
                 RaisedButton(
-                  child: Text(_authData == AuthMode.Login ?"LOGIN":"SIGN UP"),
-                    onPressed: (){}
-                    ),
+                    child:
+                        Text(_authData == AuthMode.Login ? "LOGIN" : "SIGN UP"),
+                    onPressed: () {}),
               ],
             ),
           ),
