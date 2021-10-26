@@ -63,6 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     _authData['email'] = val!;
                   },
                 ),
+                RaisedButton(
+                  child: Text(""),
+                    onPressed: (){}
+                    ),
               ],
             ),
           ),
