@@ -44,9 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   TextFormField(
                     // ignore: prefer_const_constructors
-                    decoration: InputDecoration(
-                      labelText: "E-Mail"
-                    ),
+                    decoration: InputDecoration(labelText: "E-Mail"),
+                    keyboardType: TextInputType.emailAddress,
                   ),
                 ],
               ),
