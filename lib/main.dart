@@ -27,14 +27,13 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-
 enum AuthMode { SingUp, Login }
+
 class _MyHomePageState extends State<MyHomePage> {
-
   final GlobalKey<FormState> _formKey = GlobalKey();
-   AuthMode _authMode = AuthMode.Login;
+  AuthMode _authMode = AuthMode.Login;
 
-   Map<String?, String?> _authData = {
+  Map<String?, String?> _authData = {
     'email': '',
     'password': '',
   };
@@ -62,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
-              padding:   const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
             child: Column(
               children: [
                 TextFormField(
@@ -79,6 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     _authData['email'] = val;
                   },
                 ),
+                const SizedBox(
+                  height: 100,
+                ),
                 RaisedButton(
                   child:
                       Text(_authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
@@ -94,6 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: _switchAuthMode,
                   child: Text(
                       "${_authMode == AuthMode.Login ? 'SIGN UP ' : 'LOGIN'}  INSTEAD"),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  textColor: Theme.of(context).primaryColor,
                 ),
               ],
             ),
@@ -103,6 +109,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _submit() {
-  }
+  void _submit() {}
 }
