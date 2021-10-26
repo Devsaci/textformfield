@@ -30,8 +30,8 @@ enum AuthMode { SingUp, Login }
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
-  AuthMode _authMode = AuthMode.Login;
-  Map<String, String> _authData = {
+  final AuthMode _authMode = AuthMode.Login;
+  final Map<String, String> _authData = {
     'email': '',
     'password': '',
   };
