@@ -28,6 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<FormState> _formKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,14 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // ignore: prefer_const_constructors
       body: Center(
         child: Form(
-          key: _formKey,
+            key: _formKey,
             child: SingleChildScrollView(
-          child: Column(
-            children: [TextFormField(
-
-            )],
-          ),
-        )),
+              child: Column(
+                children: [TextFormField()],
+              ),
+            )),
       ),
     );
   }
