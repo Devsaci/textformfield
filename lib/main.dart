@@ -33,7 +33,15 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("114. TextFormField "),
       ),
-      body: Center(),
+      // ignore: prefer_const_constructors
+      body: Center(
+        child: Form(
+            child: SingleChildScrollView(
+          child: Column(
+            children: [],
+          ),
+        )),
+      ),
     );
   }
 }
