@@ -46,6 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     // ignore: prefer_const_constructors
                     decoration: InputDecoration(labelText: "E-Mail"),
                     keyboardType: TextInputType.emailAddress,
+                    validator: (val){},
+                    onSaved: (val){},
+
                   ),
                 ],
               ),
