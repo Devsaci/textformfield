@@ -41,6 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _authMode == AuthMode.SingUp;
       });
+    }else{
+      setState(() {
+
+      });
     }
   }
 
