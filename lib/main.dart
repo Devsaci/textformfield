@@ -59,7 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       }
                       return null;
                     },
-                    onSaved: (val){},
+                    onSaved: (val){
+                      _authData['email'] = val!;
+                    },
 
                   ),
                 ],
