@@ -41,9 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
             key: _formKey,
             child: SingleChildScrollView(
               child: Column(
-                children: [TextFormField()],
+                children: [
+                  TextFormField(
+                    // ignore: prefer_const_constructors
+                    decoration: InputDecoration(
+                      labelText: "E-Mail"
+                    ),
+                  ),
+                ],
               ),
-            )),
+            ),
+        ),
       ),
     );
   }
