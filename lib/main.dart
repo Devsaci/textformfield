@@ -76,9 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 RaisedButton(
-                    child:
-                        Text(_authData == AuthMode.Login ? "LOGIN" : "SIGN UP"),
-                    onPressed: () {}),
+                  child:
+                      Text(_authData == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
+                  onPressed: () {},
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 8),
+                ),
               ],
             ),
           ),
