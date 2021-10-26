@@ -36,6 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
     'password': '',
   };
 
+  void _switchAuthMode(){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
