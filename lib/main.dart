@@ -81,9 +81,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {},
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
-                  padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
                   color: Theme.of(context).primaryColor,
                   textColor: Theme.of(context).primaryTextTheme.button!.color,
+                ),
+                FlatButton(
+                  onPressed: () {},
+                  child: Text(
+                      '${_authData == AuthMode.Login ? 'SIGN UP ' : 'LOGIN'}  INSTED'),
                 ),
               ],
             ),
