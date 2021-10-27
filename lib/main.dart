@@ -84,7 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   // ignore: prefer_const_constructors
                   decoration: InputDecoration(labelText: "Password"),
                   controller: _passwordController,
-                  keyboardType: TextInputType.emailAddress,
+                  obscureText: true,
+                  keyboardType: TextInputType.visiblePassword,
                   validator: (val) {
                     if (val == null || val.isEmpty || !val.contains("@")) {
                       return 'Invalid Email';
