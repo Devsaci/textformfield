@@ -101,7 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextFormField(
                     // ignore: prefer_const_constructors
                     decoration: InputDecoration(labelText: "Confirm Password"),
-                    controller: _passwordController,
                     obscureText: true,
                     keyboardType: TextInputType.visiblePassword,
                     validator: _authMode == AuthMode.SingUp
