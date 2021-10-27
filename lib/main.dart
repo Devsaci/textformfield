@@ -111,6 +111,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _submit() {
+    if(!_formKey.currentState!.validate()){
+      return;
+    }
+
     _formKey.currentState!.save();
   }
 }
