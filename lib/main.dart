@@ -111,10 +111,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _submit() {
-    if(!_formKey.currentState!.validate()){
+    if (!_formKey.currentState!.validate()) {
       return;
     }
-
     _formKey.currentState!.save();
+    if (_authMode == AuthMode.Login) {
+      //log USER In
+    } else {
+      //Sing USER Up
+    }
   }
 }
