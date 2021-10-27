@@ -87,8 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   validator: (val) {
-                    if (val == null || val.isEmpty || val.length <=5) {
-                      return 'Invalid Email';
+                    if (val == null || val.isEmpty || val.length <=5 ) {
+                      return 'Invalid Password';
                     }
                     return null;
                   },
