@@ -97,8 +97,26 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(_authData['password']);
                   },
                 ),
+                if(_authMode==AuthMode.SingUp)
+                TextFormField(
+                  // ignore: prefer_const_constructors
+                  decoration: InputDecoration(labelText: "Confirm Password"),
+                  controller: _passwordController,
+                  obscureText: true,
+                  keyboardType: TextInputType.visiblePassword,
+                  validator: (val) {
+                    if (val == null || val.isEmpty || val.length <= 5) {
+                      return 'Password do not match!';
+                    }
+                    return null;
+                  },
+                  onSaved: (val) {
+                    _authData['password'] = val;
+                    print(_authData['password']);
+                  },
+                ),
                 const SizedBox(
-                  height: 100,
+                  height: 50,
                 ),
                 RaisedButton(
                   child:
