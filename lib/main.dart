@@ -79,6 +79,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(_authData['email']);
                   },
                 ),
+                TextFormField(
+                  // ignore: prefer_const_constructors
+                  decoration: InputDecoration(labelText: "Password"),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (val) {
+                    if (val == null || val.isEmpty || !val.contains("@")) {
+                      return 'Invalid Email';
+                    }
+                    return null;
+                  },
+                  onSaved: (val) {
+                    _authData['email'] = val;
+                    print(_authData['email']);
+                  },
+                ),
                 const SizedBox(
                   height: 100,
                 ),
