@@ -76,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   onSaved: (val) {
                     _authData['email'] = val;
+                    print(_authData['email']);
                   },
                 ),
                 const SizedBox(
@@ -109,5 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _submit() {}
+  void _submit() {
+    _formKey.currentState!.save();
+  }
 }
