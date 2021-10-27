@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var _passwordController;
+    final _passwordController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         title: Text("114. TextFormField "),
