@@ -87,14 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   validator: (val) {
-                    if (val == null || val.isEmpty || val.length <=5 ) {
+                    if (val == null || val.isEmpty || val.length <= 5) {
                       return 'Invalid Password';
                     }
                     return null;
                   },
                   onSaved: (val) {
-                    _authData['email'] = val;
-                    print(_authData['email']);
+                    _authData['password'] = val;
+                    print(_authData['password']);
                   },
                 ),
                 const SizedBox(
