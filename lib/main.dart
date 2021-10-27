@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var _passwordController;
     return Scaffold(
       appBar: AppBar(
         title: Text("114. TextFormField "),
@@ -82,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 TextFormField(
                   // ignore: prefer_const_constructors
                   decoration: InputDecoration(labelText: "Password"),
+                  controller: _passwordController,
                   keyboardType: TextInputType.emailAddress,
                   validator: (val) {
                     if (val == null || val.isEmpty || !val.contains("@")) {
